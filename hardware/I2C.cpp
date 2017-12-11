@@ -146,7 +146,8 @@ const char* szI2CTypeNames[] = {
 };
 
 I2C::I2C(const int ID, const _eI2CType DevType, const int Port):
-m_dev_type(DevType)
+m_dev_type(DevType),
+i2c_addr(Port)
 {
 	if ((m_dev_type == I2CTYPE_PCF8574) || (m_dev_type == I2CTYPE_MCP23017)) {
 		i2c_addr = Port;
